@@ -1,3 +1,34 @@
-body{
-    background-color: red;
+img {
+   max-width: 100%;
+}
+.grid {
+   display: grid;
+   grid-template-columns: repeat(12, 1fr);
+}
+
+.container {
+   grid-column: span 12;
+}
+.grid-main-area {
+   display: grid;
+   grid-template-columns: repeat(9, 1fr);
+   grid-template-areas:
+      'title title title title title title title title title'
+      'image image image image image image image image image';
+}
+.main-text {
+   grid-area: title;
+}
+.main-image {
+   grid-area: image;
+}
+@media (min-width: 960px) {
+   .grid-main-area {
+      display: grid;
+      grid-template-columns: repeat(9, 1fr);
+      grid-template-areas: 'title title title image image image image image image';
+   }
+   .container {
+      grid-column: 2/12;
+   }
 }

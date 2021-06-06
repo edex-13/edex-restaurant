@@ -1,3 +1,5 @@
+@import './modules/_variables';
+
 img {
    max-width: 100%;
 }
@@ -8,6 +10,7 @@ img {
 
 .container {
    grid-column: span 12;
+   padding: $big-padding;
 }
 .grid-main-area {
    display: grid;

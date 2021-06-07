@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;700&display=swap');
 @import './modules/_variables';
 @import './modules/_mixins';
-body {
+* {
    font-family: 'Source Sans Pro', sans-serif;
    margin: 0;
    padding: 0;
@@ -21,6 +21,7 @@ figure {
       text-transform: uppercase;
       font-size: 2em;
       position: absolute;
+      letter-spacing: 8px;
       width: auto;
       bottom: 0px;
       left: 10px;
@@ -37,14 +38,26 @@ figure {
    padding: $big-padding;
 }
 .grid-main-area {
+   margin-top: $big-margin-top;
    display: grid;
    grid-template-columns: repeat(9, 1fr);
    grid-template-areas:
       'title title title title title title title title title'
       'image image image image image image image image image';
-}
-.main-text {
-   grid-area: title;
+   .text {
+      font-weight: 200;
+      grid-area: title;
+      font-size: 1.2em;
+      line-height: 1.5em;
+      h1 {
+         font-weight: inherit;
+         font-size: $big;
+         line-height: 1.5em;
+      }
+      p {
+         margin: $default-margin-top 0px;
+      }
+   }
 }
 .main-image {
    grid-area: image;

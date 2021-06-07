@@ -16,18 +16,11 @@ figure {
    margin: 0px;
 
    figcaption {
-      padding: $large-padding;
-      font-weight: bold;
-      text-transform: uppercase;
-      font-size: 2em;
-      position: absolute;
-      letter-spacing: 8px;
-      width: auto;
-      bottom: 0px;
-      left: 10px;
-      @include text-center;
-      color: rgba($grey, 0.7);
+      @include caption;
    }
+}
+.full-height {
+   min-height: 100vh;
 }
 .grid {
    display: grid;
@@ -38,25 +31,15 @@ figure {
    padding: $big-padding;
 }
 .grid-main-area {
-   margin-top: $big-margin-top;
+   margin: $big-margin-top 0px;
    display: grid;
    grid-template-columns: repeat(9, 1fr);
    grid-template-areas:
       'title title title title title title title title title'
       'image image image image image image image image image';
    .text {
-      font-weight: 200;
+      @include main-text;
       grid-area: title;
-      font-size: 1.2em;
-      line-height: 1.5em;
-      h1 {
-         font-weight: inherit;
-         font-size: $big;
-         line-height: 1.5em;
-      }
-      p {
-         margin: $default-margin-top 0px;
-      }
    }
 }
 .main-image {
@@ -83,6 +66,63 @@ figure {
    }
    &:hover::before {
       height: 100%;
+   }
+}
+.cover {
+   @include absolute-cover;
+   min-height: 400px;
+   background-size: cover;
+   background-position: center;
+
+   &.parallax {
+      background-attachment: fixed;
+      background-image: url('../../../public/img/parallax-cover.jpg');
+      position: relative;
+
+      p {
+         margin-bottom: 20px;
+         @include caption;
+         background-color: rgba($blue, 0.8);
+         display: block;
+         width: 100%;
+         box-sizing: border-box;
+         left: 0px;
+         @include text-right;
+         span {
+            display: block;
+            font-size: 0.5em;
+            font-weight: 200;
+            margin-top: 6px;
+         }
+      }
+   }
+}
+.mission{
+   align-items: center;
+   .container{
+      @include main-text;
+      font-size: 1.1em;
+      figure{
+         float: right;
+         margin-left: 1.1em;
+      }
+      p{
+         line-height: 2em;
+         &:nth-of-type(1){
+            margin-bottom: 3em;
+            position: relative;
+            &::after{
+               content: '';
+               background-color: $blue;
+               position: absolute;
+               right: 0;
+               bottom: -1.5em;
+               height: 8px;
+               width:85%;
+               z-index: -1;
+            }
+         }
+      }
    }
 }
 @media (min-width: 960px) {

@@ -97,32 +97,47 @@ figure {
       }
    }
 }
-.mission{
+.mission {
    align-items: center;
-   .container{
+   .container {
       @include main-text;
       font-size: 1.1em;
-      figure{
+      figure {
          float: right;
          margin-left: 1.1em;
       }
-      p{
+      p {
          line-height: 2em;
-         &:nth-of-type(1){
+         &:nth-of-type(1) {
             margin-bottom: 3em;
             position: relative;
-            &::after{
+            &::after {
                content: '';
                background-color: $blue;
                position: absolute;
                right: 0;
                bottom: -1.5em;
                height: 8px;
-               width:85%;
+               width: 85%;
                z-index: -1;
             }
          }
       }
+   }
+}
+.social {
+   margin-top: $big-margin-top;
+   margin-bottom: $big-margin-top;
+      @include text-center;
+
+   p.title {
+      font-weight: 200;
+      font-size: 2.5em;
+   }
+   a {
+      display: block;
+      max-width: 150px;
+      margin: 1em auto;
    }
 }
 @media (min-width: 960px) {
@@ -133,5 +148,14 @@ figure {
    }
    .container {
       grid-column: 2/12;
+   }
+   .social {
+      a {
+         display: inline-block;
+         margin-right: 90px;
+         &:last-of-type {
+            margin-right: 0px;
+         }
+      }
    }
 }

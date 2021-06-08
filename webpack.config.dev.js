@@ -10,6 +10,9 @@ module.exports = {
    },
    resolve: {
       extensions: ['.js'],
+      alias: {
+         '@images': path.resolve(__dirname, 'public/img/'),
+      },
    },
    module: {
       rules: [

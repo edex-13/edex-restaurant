@@ -31,20 +31,22 @@ figure {
    padding: $big-padding;
 }
 .grid-main-area {
-   margin: $big-margin-top 0px;
    display: grid;
    grid-template-columns: repeat(9, 1fr);
+   margin-top: $big-margin-top;
+   margin-bottom: $big-margin-top;
    grid-template-areas:
       'title title title title title title title title title'
       'image image image image image image image image image';
    .text {
-      @include main-text;
       grid-area: title;
+      @include main-text;
+   }
+   .image {
+      grid-area: image;
    }
 }
-.main-image {
-   grid-area: image;
-}
+
 .btn {
    padding: $large-padding;
    position: relative;
@@ -97,6 +99,55 @@ figure {
       }
    }
 }
+.slider {
+   header {
+      background-color: $blue;
+      color: $white;
+      padding: $big-padding;
+      transform: translateY(40px);
+      width: 90%;
+      box-sizing: border-box;
+      margin: 0 auto;
+      z-index: 10;
+      position: relative;
+      h2 {
+         margin: 0px;
+      }
+      .separator{
+         text-align: right;
+         padding-right: 150px;
+         position: relative;
+         color: $white;
+         &::after{
+            position: absolute;
+            content: '';
+            height: 2px;
+            width: 140px;
+            background-color: currentColor;
+            top:.7em;
+            right: 0;
+         }
+      }
+   }
+   .image {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+   }
+}
+#slider-text-content{
+   transition: all .6s ease-out;
+   &.hide{
+      opacity: 0;
+      transform: translateX(150px);
+   }
+}
+#slider-image{
+   transition: all .6s ease-out;
+   &.hide{
+      opacity: 0;
+   }
+}
 .mission {
    align-items: center;
    .container {
@@ -128,7 +179,7 @@ figure {
 .social {
    margin-top: $big-margin-top;
    margin-bottom: $big-margin-top;
-      @include text-center;
+   @include text-center;
 
    p.title {
       font-weight: 200;
@@ -141,13 +192,22 @@ figure {
    }
 }
 @media (min-width: 960px) {
+   .container {
+      grid-column: 2/12;
+   }
    .grid-main-area {
       display: grid;
       grid-template-columns: repeat(9, 1fr);
       grid-template-areas: 'title title title image image image image image image';
    }
-   .container {
-      grid-column: 2/12;
+
+   .slider {
+      align-items: center;
+      header {
+         transform: translateX(100px);
+         width: 100%;
+         min-height: 350px;
+      }
    }
    .social {
       a {

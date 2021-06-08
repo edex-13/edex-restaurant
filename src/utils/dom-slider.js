@@ -6,6 +6,9 @@ const sliderTitle = document.querySelector('#slider-title');
 const sliderSubtitle = document.querySelector('#slider-subtitles');
 const sliderImage = document.querySelector('#slider-image');
 
+const rightArrow = document.querySelector('.right-arrow');
+const leftArrow = document.querySelector('.left-arrow ');
+
 
 
 
@@ -24,7 +27,10 @@ let slider = new Slider({
          sliderImage.classList.remove('hide');
       }, 1000);
    },
-   speed: 4000,
+   speed: 2000,
 });
 
 slider.play();
+
+rightArrow.addEventListener('click',slider.next)
+leftArrow.addEventListener('click',slider.prev)

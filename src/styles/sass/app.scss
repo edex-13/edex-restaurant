@@ -100,6 +100,23 @@ figure {
    }
 }
 .slider {
+   .controls {
+      text-align: right;
+      margin-bottom: 20px;
+      padding-right: 2em;
+      cursor: pointer;
+      .left-arrow,
+      .right-arrow {
+         height: 70px;
+         &:hover {
+            opacity: 0.4;
+         }
+      }
+      .left-arrow {
+         margin-right: 1em;
+         transform: rotate(180deg);
+      }
+   }
    header {
       background-color: $blue;
       color: $white;
@@ -113,18 +130,18 @@ figure {
       h2 {
          margin: 0px;
       }
-      .separator{
+      .separator {
          text-align: right;
          padding-right: 150px;
          position: relative;
          color: $white;
-         &::after{
+         &::after {
             position: absolute;
             content: '';
             height: 2px;
             width: 140px;
             background-color: currentColor;
-            top:.7em;
+            top: 0.7em;
             right: 0;
          }
       }
@@ -135,16 +152,16 @@ figure {
       align-items: center;
    }
 }
-#slider-text-content{
-   transition: all .6s ease-out;
-   &.hide{
+#slider-text-content {
+   transition: all 0.6s ease-out;
+   &.hide {
       opacity: 0;
       transform: translateX(150px);
    }
 }
-#slider-image{
-   transition: all .6s ease-out;
-   &.hide{
+#slider-image {
+   transition: all 0.6s ease-out;
+   &.hide {
       opacity: 0;
    }
 }

@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 module.exports = {
    entry: path.resolve(__dirname, 'src/index.js'),
+   mode: 'production',
    output: {
       publicPath: '/',
       path: path.resolve(__dirname, 'dist'),
@@ -9,6 +10,9 @@ module.exports = {
    },
    resolve: {
       extensions: ['.js'],
+      alias: {
+         '@images': path.resolve(__dirname, 'public/img/'),
+      },
    },
    module: {
       rules: [
@@ -28,13 +32,21 @@ module.exports = {
                },
             ],
          },
+         {
+            test: /\.scss$/,
+            use: ['style-loader', 'css-loader', 'sass-loader'],
+         },
+         {
+            type: "asset",
+            test: /\.(png|jpg)$/i
+         }
       ],
    },
-   plugins:[
+   plugins: [
       new HtmlWebPackPlugin({
-         injet:true,
-         template: path.resolve(__dirname,'public/index.html'),
-         filename: './index.html'
+         injet: true,
+         template: path.resolve(__dirname, 'public/index.html'),
+         filename: './index.html',
       }),
-   ]
+   ],
 };

@@ -8,7 +8,33 @@
    </head>
    <body>
       <main>
-         <section>
+         <div class="menu">
+            <img src="./img/menu.svg" alt="menu">
+         </div>
+         <div class="menu-screen">
+            <a href="#" class="close">
+               <img src="./img/close.svg" alt="close">
+            </a>
+            <nav>
+               <a href="#home">
+                  <span class="main">Home</span>
+                  <span>Lorem ipsum dolor sit amet.</span>
+               </a>
+               <a href="#about">
+                  <span class="main">Products</span>
+                  <span>Lorem ipsum dolor sit amet.</span>
+               </a>
+               <a href="#missions">
+                  <span class="main">Mission</span>
+                  <span>Lorem ipsum dolor sit amet.</span>
+               </a>
+               <a href="#social">
+                  <span class="main">Contact uts</span>
+                  <span>Lorem ipsum dolor sit amet.</span>
+               </a>
+            </nav>
+         </div>
+         <section id="home">
             <div class="grid">
                <div class="container">
                   <div class="grid-main-area">
@@ -35,12 +61,12 @@
                </p>
             </div>
          </section>
-         <section>
+         <section id="about">
             <div class="grid-main-area slider">
                <div class="text">
                   <div class="controls">
-                     <img src="./img/arrow.svg" alt="flecha a la izquierda" class="left-arrow">
-                     <img src="./img/arrow.svg" alt="flecha a la derecha" class="right-arrow">
+                     <img src="./img/arrow.svg" alt="flecha a la izquierda" class="left-arrow" />
+                     <img src="./img/arrow.svg" alt="flecha a la derecha" class="right-arrow" />
                   </div>
                   <header>
                      <div id="slider-text-content">
@@ -58,8 +84,7 @@
                </div>
             </div>
          </section>
-         <!-- <section style="min-height: 100vh"></section> -->
-         <section>
+         <section id="missions">
             <div class="grid full-height mission">
                <div class="container">
                   <h1>Our Mission</h1>
@@ -80,7 +105,7 @@
                </div>
             </div>
          </section>
-         <section>
+         <section id="social">
             <div class="grid social">
                <div class="container">
                   <p class="title">Contact us</p>
